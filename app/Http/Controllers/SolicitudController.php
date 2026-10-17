@@ -40,7 +40,7 @@ class SolicitudController extends Controller
         $solicitud->estado = $request->estado;
         $solicitud->save();
 
-        return redirect()->back()->with('exito', 'Estado actualizado correctamente.');
+        return redirect()->back()->with('exito', "Estado de la solicitud #{$id} actualizado a '{$request->estado}'.");
     }
 }
 
