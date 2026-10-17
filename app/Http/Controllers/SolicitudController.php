@@ -34,4 +34,18 @@ class SolicitudController extends Controller
 
         return redirect()->back()->with('exito', 'Solicitud registrada correctamente con estado Pendiente.');
     }
+
+    public function updateEstado(Request $request, $id)
+    {
+        $request->validate([
+            'estado' => 'required|in:Pendiente,En proceso,Resuelta',
+        ]);
+
+        $solicitud = SolicitudSoporte::findOrFail($id);
+        $solicitud->estado = $request->estado;
+        $solicitud->save();
+
+        return redirect()->back()->with('exito', "Estado de la solicitud #{$id} actualizado a '{$request->estado}'.");
+    }
 }
+
