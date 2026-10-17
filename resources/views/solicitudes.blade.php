@@ -9,7 +9,6 @@
 <div class="container">
     <h2 class="mb-4 text-center">Sistema de Registro y Control de Solicitudes de Soporte Técnico</h2>
 
-    <!-- Mensajes de confirmación o error -->
     @if(session('exito'))
         <div class="alert alert-success">{{ session('exito') }}</div>
     @endif
@@ -27,7 +26,6 @@
     @endif
 
     <div class="row">
-        <!-- 3.1 Formulario de Registro -->
         <div class="col-md-4">
             <div class="card shadow-sm mb-4">
                 <div class="card-header bg-primary text-white">Nueva Solicitud</div>
@@ -59,9 +57,8 @@
                 </div>
             </div>
 
-            <!-- 3.4 Botón de Envío a Red Local -->
             <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">Sincronización Red Local</div>
+                <div class="card-header bg-dark text-white">Sincronización Red Local (10.0.40.136)</div>
                 <div class="card-body text-center">
                     <p class="small text-muted">Envía los registros locales a la BD MySQL del docente (Upsert).</p>
                     <form action="{{ route('solicitudes.sincronizar') }}" method="POST">
@@ -74,7 +71,6 @@
             </div>
         </div>
 
-        <!-- 3.2 Listado y 3.3 Actualización de Estado -->
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-header bg-secondary text-white">Listado de Solicitudes (BD Local)</div>
