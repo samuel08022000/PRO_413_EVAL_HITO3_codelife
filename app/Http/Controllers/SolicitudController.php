@@ -1,6 +1,11 @@
+<?php
+
 namespace App\Http\Controllers;
+
 use App\Models\SolicitudSoporte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
 class SolicitudController extends Controller
 {
@@ -27,6 +32,6 @@ class SolicitudController extends Controller
             'estado'       => 'Pendiente',
         ]);
 
-        return redirect()->back()->with('exito', 'Solicitud registrada correctamente.');
+        return redirect()->back()->with('exito', 'Solicitud registrada correctamente con estado Pendiente.');
     }
 }
